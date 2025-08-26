@@ -1,13 +1,11 @@
 module Api
   class UsersController < BaseController
-    # GET /api/me
     def me
       u = @current_user
       puts u;
       render json: serialize_user(u)
     end
 
-    # GET /api/users/:id
     def show
       u = User.find(params[:id])
       render json: serialize_user(u).merge(is_following: @current_user.following.exists?(u.id))
