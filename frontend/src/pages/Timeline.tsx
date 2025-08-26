@@ -16,7 +16,7 @@ export default function Timeline() {
 
     async function load(p=1) {
         const r: ListResp = await getTimeline(p);
-        setList(r.data.map(m => ({ ...m, liked_by_me: false })));
+        setList(r.data);
         setPage(r.meta.page); setPages(r.meta.total_pages);
     }
     useEffect(()=>{ load(page); }, [page]);

@@ -10,7 +10,7 @@ module Api
     # DELETE /api/murmurs/:id/like
     def destroy
       m = Murmur.find(params[:id])
-      Like.where(user: @current_user, murmur: m).delete_all
+      Like.where(user: @current_user, murmur: m).destroy_all
       render json: { ok: true, likes_count: m.reload.likes_count }
     end
   end
