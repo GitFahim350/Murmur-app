@@ -13,7 +13,8 @@ bundle install
 bin/rails db:migrate
 bin/rails db:seed   # optional: adds sample users & murmurs
 bin/rails s         # http://localhost:3000
-
-cd frontend
+```
+### 2) Frontend (React + TS)
+```cd frontend
 npm install
-npm run dev         # http://localhost:8080
+npm run dev         # http://localhost:8080```
